@@ -8,14 +8,15 @@ generator client {
 }
 
 model User {
-  createdAt DateTime @default(now())
+  createdAt DateTime  @default(now())
   firstName String?
-  id        String   @id @default(cuid())
+  id        String    @id @default(cuid())
   lastName  String?
   password  String
   roles     Json
-  updatedAt DateTime @updatedAt
-  username  String   @unique
+  updatedAt DateTime  @updatedAt
+  username  String    @unique
+  verifedAt DateTime?
 }
 
 model Product {

@@ -26,6 +26,7 @@ const CREATE_INPUT = {
   password: "examplePassword",
   updatedAt: new Date(),
   username: "exampleUsername",
+  verifedAt: new Date(),
 };
 const CREATE_RESULT = {
   createdAt: new Date(),
@@ -35,6 +36,7 @@ const CREATE_RESULT = {
   password: "examplePassword",
   updatedAt: new Date(),
   username: "exampleUsername",
+  verifedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
@@ -45,6 +47,7 @@ const FIND_MANY_RESULT = [
     password: "examplePassword",
     updatedAt: new Date(),
     username: "exampleUsername",
+    verifedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
@@ -55,6 +58,7 @@ const FIND_ONE_RESULT = {
   password: "examplePassword",
   updatedAt: new Date(),
   username: "exampleUsername",
+  verifedAt: new Date(),
 };
 
 const service = {
@@ -141,6 +145,7 @@ describe("User", () => {
         ...CREATE_RESULT,
         createdAt: CREATE_RESULT.createdAt.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
+        verifedAt: CREATE_RESULT.verifedAt.toISOString(),
       });
   });
 
@@ -153,6 +158,7 @@ describe("User", () => {
           ...FIND_MANY_RESULT[0],
           createdAt: FIND_MANY_RESULT[0].createdAt.toISOString(),
           updatedAt: FIND_MANY_RESULT[0].updatedAt.toISOString(),
+          verifedAt: FIND_MANY_RESULT[0].verifedAt.toISOString(),
         },
       ]);
   });
@@ -176,6 +182,7 @@ describe("User", () => {
         ...FIND_ONE_RESULT,
         createdAt: FIND_ONE_RESULT.createdAt.toISOString(),
         updatedAt: FIND_ONE_RESULT.updatedAt.toISOString(),
+        verifedAt: FIND_ONE_RESULT.verifedAt.toISOString(),
       });
   });
 
@@ -189,6 +196,7 @@ describe("User", () => {
         ...CREATE_RESULT,
         createdAt: CREATE_RESULT.createdAt.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
+        verifedAt: CREATE_RESULT.verifedAt.toISOString(),
       })
       .then(function () {
         agent
