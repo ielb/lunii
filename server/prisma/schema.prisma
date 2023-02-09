@@ -1,0 +1,62 @@
+datasource postgres {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  createdAt DateTime @default(now())
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     Json
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
+
+model Product {
+  age       String?
+  category  String?
+  createdAt DateTime   @default(now())
+  id        String     @id @default(cuid())
+  languaes  Language[]
+  updatedAt DateTime   @updatedAt
+}
+
+model Language {
+  audioPreview String?
+  characters   String?
+  createdAt    DateTime @default(now())
+  description  String?
+  duration     String?
+  id           String   @id @default(cuid())
+  name         String?
+  price        Float?
+  productId    Product? @relation(fields: [productIdId], references: [id])
+  productIdId  String?
+  subTitle     String?
+  title        String?
+  updatedAt    DateTime @updatedAt
+}
+
+model Character {
+  createdAt  DateTime @default(now())
+  id         String   @id @default(cuid())
+  languageId String?
+  name       String?
+  role       String?
+  updatedAt  DateTime @updatedAt
+}
+
+model Country {
+  createdAt  DateTime @default(now())
+  flag       String?
+  id         String   @id @default(cuid())
+  languageId String?
+  name       String?
+  updatedAt  DateTime @updatedAt
+}
