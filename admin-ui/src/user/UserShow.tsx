@@ -18,6 +18,7 @@ export const UserShow = (props: ShowProps): React.ReactElement => {
         <TextField label="Roles" source="roles" />
         <DateField source="updatedAt" label="Updated At" />
         <TextField label="Username" source="username" />
+        <TextField label="verifed at" source="verifedAt" />
       </SimpleShowLayout>
     </Show>
   );

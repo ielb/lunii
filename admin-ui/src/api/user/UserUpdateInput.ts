@@ -6,4 +6,5 @@ export type UserUpdateInput = {
   password?: string;
   roles?: InputJsonValue;
   username?: string;
+  verifedAt?: Date | null;
 };

@@ -8,4 +8,5 @@ export type User = {
   roles: JsonValue;
   updatedAt: Date;
   username: string;
+  verifedAt: Date | null;
 };
